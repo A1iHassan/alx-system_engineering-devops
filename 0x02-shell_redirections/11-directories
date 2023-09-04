@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -prune -type d | wc -l
+find . -prune -type d > file | wc -l file
