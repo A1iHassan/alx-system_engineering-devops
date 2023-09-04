@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -prune -type d > file | wc -l file
+find . -mindepth 1 -type d | wc -l file
