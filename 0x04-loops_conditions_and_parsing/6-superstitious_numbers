@@ -7,7 +7,7 @@ while [ $i -le 20 ]; do
             echo "$i"
             echo "bad luck from China"
             ;;
-        8)
+        9)
             echo "$i"
             echo "bad luck from Japan"
             ;;
