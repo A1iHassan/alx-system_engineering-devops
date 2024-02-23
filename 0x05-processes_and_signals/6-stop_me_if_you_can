@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+pid=$(pgrep 4-to_infinity_and_beyond)
+
+if [ -n "$pid" ]; then
+    echo -n "Stopping process 4-to_infinity_and_beyond..."
+    echo "SIGTERM" > "/proc/$pid/status"
+    echo "Done."
+else
+    echo "Process 4-to_infinity_and_beyond is not running."
+fi
