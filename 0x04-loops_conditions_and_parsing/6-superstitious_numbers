@@ -2,13 +2,22 @@
 #This script displays "Best School" 10 times
 i=1
 while [ $i -le 20 ]; do
-    echo "$i"
-    if [ $i -eq 4 ]; then
-        echo "bad luck from China"
-    elif [ $i -eq 8 ]; then
-        echo "bad luck from Japan"
-    elif [ $i -eq 17 ]; then
-        echo "bad luck from Italy"
-    fi
+    case $i in
+        4)
+            echo "$i"
+            echo "bad luck from China"
+            ;;
+        8)
+            echo "$i"
+            echo "bad luck from Japan"
+            ;;
+        17)
+            echo "$i"
+            echo "bad luck from Italy"
+            ;;
+        *)
+            echo "$i"
+            ;;
+    esac
     ((i++))
 done
