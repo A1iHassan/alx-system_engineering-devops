@@ -1,6 +1,5 @@
 # answer for task 1
 
-package {'flask':
-  ensure   => '2.1.0',
-  provider => 'pip3'
+exec {'download_package':
+  command => '/usr/bin/pip3 pip3 install flask==2.1.0',
 }
