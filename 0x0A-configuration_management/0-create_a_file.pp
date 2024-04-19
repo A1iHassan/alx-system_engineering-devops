@@ -1,3 +1,5 @@
+# answer for task 0
+
 file { '/tmp/school':
   ensure  => file,
   mode    => '0744',
