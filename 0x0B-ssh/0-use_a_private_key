@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# runs an ssh connection
+ssh -i ~/.ssh/school ubuntu@52.91.152.199
