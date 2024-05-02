@@ -2,6 +2,3 @@
 # installs Nginx and sets up a basic configuration
 sudo apt-get -y update
 sudo apt-get install -y nginx
-sudo ufw allow 'Nginx HTTP'
-echo 'Hello World!' > /var/www/html/index.html
-sudo systemctl start nginx
