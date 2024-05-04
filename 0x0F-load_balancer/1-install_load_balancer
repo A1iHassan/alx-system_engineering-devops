@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # installs the load balancer
-sudo apt-get -y update
-sudo apt-get -y install haproxy
+apt-get -y update
+apt-get -y install haproxy
 echo '
 frontend sammykingx.tech
         bind 0:80
@@ -12,4 +12,4 @@ backend web_servers
         server 515469-web-01 100.26.152.157:80
         server 515469-web-02 52.86.102.6:80
 ' >> /etc/haproxy/haproxy.cfg
-sudo  service haproxy start
+ service haproxy start
