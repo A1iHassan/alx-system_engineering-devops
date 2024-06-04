@@ -2,19 +2,19 @@
 """task 0 answer"""
 
 
+import requests
+
+
 def number_of_subscribers(subreddit):
-    """returns number of total subscribers"""
-    import requests
+    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    headers = {'User-Agent': 'custom-user-agent'}
 
-    url = ("https://api.reddit.com/r/{}/about".format(subreddit))
-    headers = {'User-Agent': 'CustomClient/1.0'}
-    response = requests.get(url, headers=headers, allow_redirects=False)
-
-    if response.status_code != 200:
-        return (0)
-    response = response.json()
-    if 'data' in response:
-        return (response.get('data').get('subscribers'))
-
-    else:
-        return (0)
+    try:
+        response = requests.get(url, headers=headers, allow_redirects=False)
+        if response.status_code == 200:
+            data = response.json()
+            return data['data']['subscribers']
+        else:
+            return 0
+    except requests.RequestException:
+        return 0
