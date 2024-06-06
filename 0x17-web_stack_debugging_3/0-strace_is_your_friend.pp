@@ -1,3 +1,4 @@
+# 0-strace_is_your_friend.pp
 file { '/etc/apache2/sites-enabled/000-default.conf':
   ensure => file,
   source => '/etc/apache2/sites-available/000-default.conf',
