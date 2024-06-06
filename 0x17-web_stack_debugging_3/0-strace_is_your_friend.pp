@@ -1,15 +1,6 @@
-# 0-strace_is_your_friend.pp
-file { '/etc/apache2/sites-enabled/000-default.conf':
-  ensure => file,
-  source => '/etc/apache2/sites-available/000-default.conf',
-  owner  => 'root',
-  group  => 'root',
-  mode   => '0644',
-  require => Package['apache2'],
-}
+# Fixes bad `phpp` extensions to `php` in the WordPress file `wp-settings.php`.
 
-service { 'apache2':
-  ensure => running,
-  enable => true,
-  subscribe => File['/etc/apache2/sites-enabled/000-default.conf'],
+exec { 'fix-wordpress':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => '/usr/local/bin/:/bin/'
 }
